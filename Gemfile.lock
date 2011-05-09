@@ -43,6 +43,7 @@ GEM
       chalofa_ruby-progressbar (~> 0.0.9)
       rspec (~> 2.0)
       rspec-instafail (~> 0.1.4)
+    haml (3.1.1)
     i18n (0.5.0)
     json (1.4.6)
     mail (2.2.19)
@@ -113,6 +114,7 @@ DEPENDENCIES
   decent_exposure
   factory_girl_rails
   fuubar
+  haml
   rails (= 3.0.7)
   resque
   rspec-rails
