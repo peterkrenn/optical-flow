@@ -1,3 +1,3 @@
 class VideosController < ApplicationController
-  expose :videos
+  expose(:videos) { Video.all }
 end
