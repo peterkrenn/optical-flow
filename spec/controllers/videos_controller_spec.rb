@@ -6,5 +6,9 @@ describe VideosController do
       get :index
       response.should render_template 'index'
     end
+
+    it 'should expose videos' do
+      controller.should respond_to(:videos)
+    end
   end
 end

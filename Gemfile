@@ -8,7 +8,5 @@ gem 'haml'
 
 group :development, :test do
   gem 'rspec-rails'
-  gem 'fuubar'
-  gem 'shoulda-matchers'
-  gem 'factory_girl_rails'
+  gem 'webrat'
 end
