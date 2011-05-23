@@ -11,7 +11,7 @@ gem 'uglifier'
 gem 'jquery-rails'
 
 group :development, :test do
-  gem 'rspec-rails'
+  gem 'rspec-rails', '2.6.1.beta1'
 end
 
 group :test do

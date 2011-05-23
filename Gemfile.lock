@@ -94,11 +94,11 @@ GEM
       rspec-core (~> 2.6.0)
       rspec-expectations (~> 2.6.0)
       rspec-mocks (~> 2.6.0)
-    rspec-core (2.6.0)
+    rspec-core (2.6.2)
     rspec-expectations (2.6.0)
       diff-lcs (~> 1.1.2)
     rspec-mocks (2.6.0)
-    rspec-rails (2.6.0)
+    rspec-rails (2.6.1.beta1)
       actionpack (~> 3.0)
       activesupport (~> 3.0)
       railties (~> 3.0)
@@ -137,7 +137,7 @@ DEPENDENCIES
   jquery-rails
   rails (= 3.1.0.rc1)
   resque
-  rspec-rails
+  rspec-rails (= 2.6.1.beta1)
   sass
   sqlite3
   uglifier
