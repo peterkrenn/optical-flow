@@ -1,0 +1,9 @@
+%h1 Upload a video
+
+= form_for video do |form|
+  %p
+    = form.label :file, 'Video file'
+    = form.file_field :file
+    = form.hidden_field :file_cache
+  %p
+    = form.submit 'Upload Video'
