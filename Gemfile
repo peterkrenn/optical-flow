@@ -13,6 +13,7 @@ gem 'uglifier'
 gem 'jquery-rails'
 
 group :development, :test do
+  gem 'ruby-debug19'
   gem 'rspec-rails', '2.6.1.beta1'
   gem 'fabrication'
 end
