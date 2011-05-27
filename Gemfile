@@ -1,16 +1,20 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.0.rc1'
+
 gem 'sqlite3'
-gem 'decent_exposure'
-gem 'resque'
+gem 'squeel'
 gem 'carrierwave'
+
+gem 'decent_exposure'
 
 gem 'haml'
 gem 'sass'
+gem 'jquery-rails'
 gem 'coffee-script'
 gem 'uglifier'
-gem 'jquery-rails'
+
+gem 'resque'
 
 group :development, :test do
   gem 'ruby-debug19'
