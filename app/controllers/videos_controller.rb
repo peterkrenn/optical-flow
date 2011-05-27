@@ -5,6 +5,6 @@ class VideosController < ApplicationController
 
   def create
     video.save
-    respond_with(videos)
+    redirect_to :action => 'index'
   end
 end

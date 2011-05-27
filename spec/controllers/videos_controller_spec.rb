@@ -42,6 +42,17 @@ describe VideosController do
     end
   end
 
+  describe 'POST create' do
+    it 'creates a new video' do
+      expect { post :create, :video => {:file => 'file'} }.to change(Video, :count).by(1)
+    end
+
+    it 'redirects to index' do
+      post :create, :file => 'file'
+      response.should redirect_to :action => 'index'
+    end
+  end
+
   pending 'PUT update' do
     context 'with valid params' do
       it 'enqueues the requested video' do
