@@ -2,12 +2,20 @@ require 'spec_helper'
 
 describe VideosController do
   describe 'routing' do
-    it 'recognizes and generates #index' do
+    it 'routes to #index' do
       { :get => '/videos' }.should route_to :controller => 'videos', :action => 'index'
       { :get => '/' }.should route_to :controller => 'videos', :action => 'index'
     end
 
-    pending 'recognizes and generates #update' do
+    it 'routes to #new' do
+      { :get => '/videos/new' }.should route_to :controller => 'videos', :action => 'new'
+    end
+
+    it 'routes to #create' do
+      { :post => '/videos' }.should route_to :controller => 'videos', :action => 'create'
+    end
+
+    pending 'routes to #update' do
       { :put => '/videos/1' }.should
         route_to(:controller => 'videos', :action => 'update', :id => '1')
     end
