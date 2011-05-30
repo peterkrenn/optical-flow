@@ -1,9 +1,10 @@
 class CreateVideos < ActiveRecord::Migration
   def change
-    create_table :videos do |t|
-      t.string :file
+    create_table :videos do |table|
+      table.string :file
+      table.string :processed_file
 
-      t.timestamps
+      table.timestamps
     end
   end
 end

@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(:version => 20110523120326) do
 
   create_table "videos", :force => true do |t|
     t.string   "file"
+    t.string   "processed_file"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
