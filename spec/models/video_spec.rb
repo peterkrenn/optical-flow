@@ -37,7 +37,7 @@ describe Video do
 
     it 'calls the video processor' do
       @video.should_receive(:system).with(Rails.root.join('vendor', 'lucas-kanade-opencv').to_s,
-        @video.original_video.file.path, @video.temp_file_path)
+        @video.original_video.file.path, @video.temp_file_path.to_s)
       @video.process
     end
 

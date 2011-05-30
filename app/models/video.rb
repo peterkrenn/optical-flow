@@ -8,7 +8,7 @@ class Video < ActiveRecord::Base
 
   def process
     system(Rails.root.join('vendor', 'lucas-kanade-opencv').to_s,
-      original_video.file.path, temp_file_path)
+      original_video.file.path, temp_file_path.to_s)
     update_attribute :processed_video, File.open(temp_file_path)
     FileUtils.rm(temp_file_path)
   end
