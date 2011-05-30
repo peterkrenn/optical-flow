@@ -1,22 +1,22 @@
 require 'spec_helper'
 
 describe Video do
-  it { should have_db_column(:file).of_type(:string) }
-  it { should have_db_column(:processed_file).of_type(:string) }
+  it { should have_db_column(:original_video).of_type(:string) }
+  it { should have_db_column(:processed_video).of_type(:string) }
 
   it 'mounts a VideoUploader for file' do
-    Video.new.file.should be_instance_of(VideoUploader)
+    Video.new.original_video.should be_instance_of(VideoUploader)
   end
 
   it 'mounts a VideoUploader for processed_file' do
-    Video.new.processed_file.should be_instance_of(VideoUploader)
+    Video.new.processed_video.should be_instance_of(VideoUploader)
   end
 
   describe '#file_name' do
     it 'returns the name of the uploaded file' do
       video = Fabricate(:video)
-      video.file.file.stub(:filename).and_return('rails.png')
-      video.file.file.should_receive(:filename)
+      video.original_video.file.stub(:filename).and_return('rails.png')
+      video.original_video.file.should_receive(:filename)
       video.file_name.should == 'rails.png'
     end
   end
@@ -37,14 +37,14 @@ describe Video do
 
     it 'calls the video processor' do
       @video.should_receive(:system).with(Rails.root.join('vendor', 'lucas-kanade-opencv').to_s,
-        @video.file.file.path, @video.temp_file_path)
+        @video.original_video.file.path, @video.temp_file_path)
       @video.process
     end
 
     it 'stores the processed file' do
-      @video.processed_file.file.should be_nil
+      @video.processed_video.file.should be_nil
       @video.process
-      @video.processed_file.file.filename.should == File.basename(@video.temp_file_path)
+      @video.processed_video.file.filename.should == File.basename(@video.temp_file_path)
     end
 
     it 'deletes the temp file' do

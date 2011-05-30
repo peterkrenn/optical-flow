@@ -2,8 +2,8 @@
 
 = form_for video do |form|
   %p
-    = form.label :file, 'Video file'
-    = form.file_field :file
-    = form.hidden_field :file_cache
+    = form.label :original_video, 'Video file'
+    = form.file_field :original_video
+    = form.hidden_field :original_video_cache
   %p
     = form.submit 'Upload Video'

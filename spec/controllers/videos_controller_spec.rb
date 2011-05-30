@@ -44,7 +44,7 @@ describe VideosController do
 
   describe 'POST create' do
     it 'creates a new video' do
-      expect { post :create, :video => {:file => 'file'} }.to change(Video, :count).by(1)
+      expect { post :create, :video => {:original_video => 'original_video'} }.to change(Video, :count).by(1)
     end
 
     it 'redirects to index' do
