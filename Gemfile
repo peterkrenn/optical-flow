@@ -18,7 +18,7 @@ gem 'resque'
 
 group :development, :test do
   gem 'ruby-debug19'
-  gem 'rspec-rails', '2.6.1.beta1'
+  gem 'rspec-rails'
   gem 'fabrication'
 end
 
