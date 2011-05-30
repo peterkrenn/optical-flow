@@ -13,6 +13,10 @@ class Video < ActiveRecord::Base
     FileUtils.rm(temp_file_path)
   end
 
+  def async_process
+    Resque.enqueue(ProcessVideo, self.id)
+  end
+
   def temp_file_path
     Rails.root.join('tmp', "video_#{id}.avi")
   end

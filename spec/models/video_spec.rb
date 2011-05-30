@@ -52,4 +52,13 @@ describe Video do
       File.exists?(@video.temp_file_path).should be_false
     end
   end
+
+  describe '#async_process' do
+    it 'enqueues the video' do
+      @video = Fabricate(:video)
+      Resque.stub(:enqueue)
+      Resque.should_receive(:enqueue).with(ProcessVideo, @video.id)
+      @video.async_process
+    end
+  end
 end
