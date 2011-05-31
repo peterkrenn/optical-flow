@@ -25,4 +25,10 @@ end
 group :test do
   gem 'shoulda-matchers'
   gem 'webrat'
+  gem 'spork', '0.9.0.rc8'
+  gem 'fuubar'
+  gem 'autotest-standalone'
+  gem 'autotest-rails-pure'
+  gem 'autotest-fsevent'
+  gem 'autotest-growl'
 end
