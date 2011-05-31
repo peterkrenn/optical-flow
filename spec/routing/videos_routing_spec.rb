@@ -15,7 +15,7 @@ describe VideosController do
       { :post => '/videos' }.should route_to :controller => 'videos', :action => 'create'
     end
 
-    pending 'routes to #update' do
+    it 'routes to #update' do
       { :put => '/videos/1' }.should
         route_to(:controller => 'videos', :action => 'update', :id => '1')
     end

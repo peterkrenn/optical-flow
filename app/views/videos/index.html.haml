@@ -1,3 +1,5 @@
 %ul
   - videos.each do |video|
-    %li= video.file_name
+    %li
+      = video.file_name
+      = link_to 'process', video_path(video), :method => :put

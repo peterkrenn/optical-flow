@@ -7,4 +7,9 @@ class VideosController < ApplicationController
     video.save
     redirect_to :action => 'index'
   end
+
+  def update
+    video.async_process
+    redirect_to :action => 'index'
+  end
 end

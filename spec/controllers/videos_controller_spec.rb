@@ -53,15 +53,19 @@ describe VideosController do
     end
   end
 
-  pending 'PUT update' do
-    context 'with valid params' do
-      it 'enqueues the requested video' do
-        video = double(Video)
-        Video.should_receive(:find).with('file_name') { video }
-        video.should_receive(:equeue)
+  describe 'PUT update' do
+    let(:video) { Fabricate(:video) }
 
-        put :update, :file_name => 'file_name'
-      end
+    it 'processes the requested video asynchronously' do
+      Video.should_receive(:find).with(video.id) { video }
+      video.should_receive(:async_process)
+
+      put :update, :id => video.id
+    end
+
+    it 'redirects to index' do
+      put :update, :id => video.id
+      response.should redirect_to :action => 'index'
     end
   end
 end
