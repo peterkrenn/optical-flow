@@ -1,0 +1,12 @@
+%ul
+  - workers.each do |worker|
+    %li
+      %p
+        Host:
+        = worker.hostname
+      %p
+        Pid:
+        = worker.pid
+      %p
+        State:
+        = worker.state.to_s
