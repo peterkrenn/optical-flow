@@ -15,7 +15,7 @@ describe WorkersController do
 
     it 'renders' do
       get :index
-      response.should render_template 'index'
+      response.should render_template 'workers'
     end
   end
 end
