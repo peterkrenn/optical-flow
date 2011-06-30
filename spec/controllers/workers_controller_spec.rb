@@ -1,6 +1,10 @@
 require 'spec_helper'
 
 describe WorkersController do
+  before(:each) do
+    Resque.stub(:workers) { }
+  end
+
   it 'exposes workers' do
     controller.should respond_to(:workers)
     Resque.should_receive(:workers)

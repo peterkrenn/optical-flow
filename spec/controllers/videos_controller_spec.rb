@@ -56,8 +56,12 @@ describe VideosController do
   describe 'PUT update' do
     let(:video) { Fabricate(:video) }
 
+    before(:each) do
+      Video.should_receive(:find).with(video.id).and_return(video)
+      video.stub(:async_process) { }
+    end
+
     it 'processes the requested video asynchronously' do
-      Video.should_receive(:find).with(video.id) { video }
       video.should_receive(:async_process)
 
       put :update, :id => video.id
