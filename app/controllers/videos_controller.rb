@@ -1,5 +1,4 @@
 class VideosController < ApplicationController
-  respond_to :html
   expose(:videos) { Video.all }
   expose(:video)
 
@@ -10,6 +9,6 @@ class VideosController < ApplicationController
 
   def update
     video.async_process
-    redirect_to :action => 'index'
+    render :nothing => true
   end
 end

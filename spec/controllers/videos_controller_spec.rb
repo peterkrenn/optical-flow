@@ -61,15 +61,21 @@ describe VideosController do
       video.stub(:async_process) { }
     end
 
+    it 'is successful' do
+      put :update, :id => video.id
+      response.should be_successful
+    end
+
     it 'processes the requested video asynchronously' do
       video.should_receive(:async_process)
 
       put :update, :id => video.id
     end
 
-    it 'redirects to index' do
+    it 'renders nothing' do
       put :update, :id => video.id
-      response.should redirect_to :action => 'index'
+
+      response.body.should be_blank
     end
   end
 end
