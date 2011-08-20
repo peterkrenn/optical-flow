@@ -57,7 +57,7 @@ describe VideosController do
     let(:video) { Fabricate(:video) }
 
     before(:each) do
-      Video.should_receive(:find).with(video.id).and_return(video)
+      Video.should_receive(:find).with(video.id.to_s).and_return(video)
       video.stub(:async_process) { }
     end
 
