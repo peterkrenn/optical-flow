@@ -3,6 +3,6 @@ class WorkersController < ApplicationController
   expose(:workers) { Resque.workers }
 
   def index
-    render :partial => 'workers', :locals => {:workers => workers}
+    render :layout => false if request.xhr?
   end
 end

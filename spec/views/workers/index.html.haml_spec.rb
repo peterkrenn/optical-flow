@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'workers/_workers.html.haml' do
+describe 'workers/index.html.haml' do
   context 'with workers' do
     it 'displays all workers' do
       worker = double(Resque::Worker)
