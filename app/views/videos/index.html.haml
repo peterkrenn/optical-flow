@@ -1,11 +1,13 @@
-#workers
-  %h2 Workers
-  #worker_list.list
-#videos
-  %h2 Videos
-  #video_list.list
-    %ul
-      - videos.each do |video|
-        %li
-          = video.file_name
-          = link_to 'process', video_path(video), :method => :put, :remote => true
+#filters
+  %ul
+    %li= link_to 'All', '#', :class => 'active'
+    %li= link_to 'Unprocessed'
+    %li= link_to 'Queued'
+    %li= link_to 'Processed'
+
+#video_list.list
+  %ul
+    - videos.each do |video|
+      %li
+        = video.file_name
+        = link_to 'process', video_path(video), :method => :put, :remote => true

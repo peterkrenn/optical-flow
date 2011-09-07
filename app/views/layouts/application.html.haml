@@ -6,5 +6,13 @@
     = javascript_include_tag :application
     = csrf_meta_tag
   %body
-    %h1 Optical Flow
-    = yield
+    %header
+      %h1 Optical Flow
+    %nav
+      %ul
+        %li
+          %h2= link_to 'Videos', '#', :class => 'active'
+        %li
+          %h2= link_to 'Workers'
+    #content
+      = yield

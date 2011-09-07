@@ -8,7 +8,7 @@ describe 'videos/index.html.haml' do
 
     it 'displays all videos' do
       render
-      rendered.should have_selector 'ul' do |ul|
+      rendered.should have_selector '#video_list ul' do |ul|
         ul.should have_selector 'li', :content => 'video.mov', :count => 2
       end
     end
@@ -27,7 +27,7 @@ describe 'videos/index.html.haml' do
     it "doesn't display videos" do
       view.should_receive(:videos).once.and_return(videos)
       render
-      rendered.should have_selector 'ul' do |ul|
+      rendered.should have_selector '#video_list ul' do |ul|
         ul.should_not have_selector 'li'
       end
     end

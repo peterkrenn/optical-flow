@@ -1,15 +1,36 @@
+$inactive: rgba(0, 0, 0, 0.4)
+$left: 16px
+
 h1
-  padding: 8px
+  padding: 8px $left
 
-h2
-  margin-bottom: 4px
+nav
+  height: 40px
+  padding-left: $left
+  border-top: 1px solid $inactive
+  border-bottom: 1px solid $inactive
 
-.list li
-  width: 150px
-  padding: 4px
-  margin-top: 6px
-  border-radius: 4px
-  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.4)
+  li
+    float: left
+    margin-right: 16px
 
-#workers, #videos
-  margin: 8px
+  h2
+    margin-top: 12px
+
+#content
+  margin-left: $left
+
+  #filters
+    height: 32px
+    margin-top: 4px
+
+    li
+      float: left
+      margin-right: 8px
+
+  .list li
+    width: 150px
+    padding: 4px
+    margin-top: 6px
+    border-radius: 4px
+    border: 1px solid $inactive

@@ -1,5 +1,5 @@
 $ ->
   loadWorkers = ->
     $('#worker_list').load('/workers')
-  loadWorkers()
-  setInterval(loadWorkers, 2000)
+  # loadWorkers()
+  # setInterval(loadWorkers, 2000)

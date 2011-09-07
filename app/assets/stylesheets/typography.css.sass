@@ -1,26 +1,36 @@
 $blue: #398aeb
+$inactive: rgba(0, 0, 0, 0.4)
 
 body
-  font-family: Futura, sans-serif
   color: black
-  background-color: $blue
-  font-size: 12px
+  font:
+    family: Futura, sans-serif
+    size: 12px
 
-a:link, :visited
+a:link, :visited, :active
+  text-decoration: none
+  color: $inactive
+
+a:hover
   color: $blue
 
 h1
-  text-transform: uppercase
   color: white
+  background-color: $blue
   font-size: 28px
   letter-spacing: 4px
+  text-transform: uppercase
 
 h2
-  text-transform: uppercase
-  color: white
+  color: $inactive
   font-size: 16px
+  text-transform: uppercase
+
+a.active
+  color: $blue
 
 .list li
   background-color: white
 
-li
+#filters a
+  text-transform: uppercase
