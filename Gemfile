@@ -28,10 +28,17 @@ end
 group :test do
   gem 'shoulda-matchers'
   gem 'webrat'
-  gem 'spork', '0.9.0.rc9'
+
   gem 'fuubar'
-  gem 'autotest-standalone'
-  gem 'autotest-rails-pure'
-  gem 'autotest-fsevent'
-  gem 'autotest-growl'
+  gem 'spork', '0.9.0.rc9'
+
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'guard-spork'
+
+  if RUBY_PLATFORM =~ /darwin/
+    gem 'guard-pow'
+    gem 'rb-fsevent'
+    gem 'growl_notify'
+  end
 end
