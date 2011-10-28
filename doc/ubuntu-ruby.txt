@@ -1,0 +1,22 @@
+Install git
+# aptitude install git
+
+Install packages for compiling ruby
+# aptitude install build-essential zlib1g-dev
+
+Install rbenv
+$ git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+
+Add eval "$(rbenv init -)" to your .profile
+
+Install ruby-build
+$ git clone https://github.com/sstephenson/ruby-build.git
+$ cd ruby-build
+# ./install.sh
+
+Install ruby
+$ ruby-build 1.9.2-p290 ~/.rbenv/versions/1.9.2-p290
+$ rbenv rehash
+$ rbenv global 1.9.2-p290
+$ gem update --system
+$ gem update
