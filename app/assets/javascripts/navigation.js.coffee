@@ -1,8 +1,16 @@
 $ ->
+  setActive()
+  $('nav a').live 'click', ->
+    $('#content').load(@href)
+    history.pushState(null, '', @href)
+    setActive()
+    false
+
+$(window).bind 'popstate', ->
+  $('#content').load(location.href)
+  setActive()
+
+setActive = ->
   items = $('nav a')
-  items.first().addClass('active')
-  items.live 'click', ->
-      $('#content').load(@href)
-      items.removeClass('active')
-      $(this).addClass('active')
-      false
+  items.removeClass('active')
+  $(item for item in items when item.pathname == location.pathname).addClass('active')

@@ -4,7 +4,6 @@ describe VideosController do
   describe 'routing' do
     it 'routes to #index' do
       { :get => '/videos' }.should route_to :controller => 'videos', :action => 'index'
-      { :get => '/' }.should route_to :controller => 'videos', :action => 'index'
     end
 
     it 'routes to #new' do
