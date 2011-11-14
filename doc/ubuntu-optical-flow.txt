@@ -1,0 +1,25 @@
+Update system
+# aptitude update
+# aptitude full-upgrade
+
+Install ruby related packages
+# aptitude install build-essential ruby1.9.1 ruby1.9.1-dev libopenssl-ruby libsqlite3-dev
+
+Install git
+# aptitude install git
+
+Install redis
+# aptitude install redis-server
+
+Clone the repository
+$ git clone git://github.com/peterkrenn/optical-flow.git
+
+Install gem bundle
+$ cd optical-flow
+$ bundle install --without development test
+
+Create the database
+$ rake db:migrate RAILS_ENV=production
+
+Start the server
+# bundle exec rails server -e production -p 80

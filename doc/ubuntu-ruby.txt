@@ -1,3 +1,7 @@
+Update system
+# aptitude update
+# aptitude full-upgrade
+
 Install git
 # aptitude install git
 
@@ -7,7 +11,9 @@ Install packages for compiling ruby
 Install rbenv
 $ git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
 
-Add eval "$(rbenv init -)" to your .profile
+Add ~/.rbenv/bin to your PATH
+
+Add eval "$(rbenv init -)" to your .bashrc
 
 Install ruby-build
 $ git clone https://github.com/sstephenson/ruby-build.git
@@ -15,8 +21,9 @@ $ cd ruby-build
 # ./install.sh
 
 Install ruby
-$ ruby-build 1.9.2-p290 ~/.rbenv/versions/1.9.2-p290
-$ rbenv rehash
+$ rbenv install 1.9.2-p290
 $ rbenv global 1.9.2-p290
 $ gem update --system
 $ gem update
+$ gem install bundler
+$ rbenv rehash

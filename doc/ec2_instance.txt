@@ -2,7 +2,10 @@ https://help.ubuntu.com/community/EC2StartersGuide
 
 Set up Amazon account
 Generate X.509 certificate
-Create a key pair
+
+Create a key pair and and a file with the private key
+$ ec2-add-keypair key-pair-name
+
 Put them into ~/.ec2
 Make the directory and the files private
 
@@ -11,13 +14,14 @@ Set the instance variables JAVA_HOME, EC2_PRIVATE_KEY, EC2_CERT, EC2_HOME and EC
 Pick an AMI (ec2-describe-images), for example Ubuntu 11.10
 
 Run it
-$ ec2-run-instances ami-65b28011 -k key_pair -t t1.micro
+$ ec2-run-instances ami-65b28011 -k key-pair -t t1.micro
 
 Verify status and check hostname
 $ ec2-describe-instances
 
-Authorize ssh for the default security group
+Authorize ssh and http for the default security group
 $ ec2-authorize default -p 22
+$ ec2-authorize default -p 80
 
 Log into the instance
-$ ssh -i key_pair_file ubunu@instance_hostname
+$ ssh -i key-pair-file ubunu@instance-hostname
