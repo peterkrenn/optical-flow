@@ -9,5 +9,5 @@
   %ul
     - videos.each do |video|
       %li
-        = video.file_name
+        = video.original_filename
         = link_to 'process', video_path(video), :method => :put, :remote => true

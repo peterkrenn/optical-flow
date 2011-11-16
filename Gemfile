@@ -4,6 +4,7 @@ gem 'rails', '3.1.1'
 
 gem 'sqlite3'
 gem 'carrierwave'
+gem 'fog'
 
 gem 'decent_exposure'
 
@@ -41,6 +42,6 @@ group :test do
 
   if RUBY_PLATFORM =~ /darwin/
     gem 'rb-fsevent'
-    gem 'growl_notify'
+    gem 'growl'
   end
 end

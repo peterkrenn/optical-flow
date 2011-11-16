@@ -6,6 +6,10 @@ class VideosController < ApplicationController
     render :layout => false if request.xhr?
   end
 
+  def new
+    render :layout => false if request.xhr?
+  end
+
   def create
     video.save
     redirect_to :action => 'index'

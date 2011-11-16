@@ -43,12 +43,19 @@ describe VideosController do
   end
 
   describe 'POST create' do
+    let(:file) do
+      fixture_file_upload(Rails.root.join('app', 'assets', 'images', 'rails.png'), 'image/png')
+    end
+
     it 'creates a new video' do
-      expect { post :create, :video => {:original_video => 'original_video'} }.to change(Video, :count).by(1)
+      file = fixture_file_upload(Rails.root.join('app', 'assets', 'images', 'rails.png'),
+                                 'image/png')
+
+      expect { post :create, :video => {:original_video => file} }.to change(Video, :count).by(1)
     end
 
     it 'redirects to index' do
-      post :create, :file => 'file'
+      post :create, :video => {:original_video => file}
       response.should redirect_to :action => 'index'
     end
   end

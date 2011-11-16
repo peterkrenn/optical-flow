@@ -18,6 +18,8 @@ Background processing is handled by Resque and depends on Redis:
 $ brew install redis
 ```
 
+Create a `.fog_config.yml` in your home directory.
+
 Running the test suite
 ----------------------
 

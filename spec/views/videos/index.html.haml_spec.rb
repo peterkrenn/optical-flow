@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'videos/index.html.haml' do
   context 'with videos' do
-    let(:videos) { [stub_model(Video, :file_name => 'video.mov')] * 2 }
+    let(:videos) { [stub_model(Video, :original_filename => 'video.mov')] * 2 }
 
     before(:each) { view.should_receive(:videos).once.and_return(videos) }
 
