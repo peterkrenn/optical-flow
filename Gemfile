@@ -7,6 +7,7 @@ gem 'carrierwave'
 gem 'fog'
 
 gem 'decent_exposure'
+gem 'state_machine'
 
 gem 'haml'
 gem 'jquery-rails'
