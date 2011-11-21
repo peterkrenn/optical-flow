@@ -7,7 +7,4 @@
 
 #video_list.list
   %ul
-    - videos.each do |video|
-      %li
-        = video.original_filename
-        = link_to 'process', video_path(video), :method => :put, :remote => true
+    = render videos

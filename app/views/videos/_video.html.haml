@@ -1,0 +1,6 @@
+%li
+  %p
+    = video.original_filename
+  %p
+    = link_to 'download original file', video.original_video.url
+  = render :partial => "#{video.state}_video", :object => video

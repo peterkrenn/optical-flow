@@ -1,0 +1,4 @@
+%p
+  = link_to 'download processed file', processed_video.processed_video.url
+%p
+  = "processed in #{distance_of_time_in_words(processed_video.processing_finished_at, processed_video.processing_started_at, true)}"
