@@ -11,6 +11,7 @@ class VideosController < ApplicationController
   end
 
   def create
+    params[:video][:original_filename] = params[:video][:original_video].original_filename
     video.save
     redirect_to :action => 'index'
   end

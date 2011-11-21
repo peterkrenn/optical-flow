@@ -2,8 +2,6 @@ class Video < ActiveRecord::Base
   mount_uploader :original_video, VideoUploader
   mount_uploader :processed_video, VideoUploader
 
-  before_create :set_original_filename
-
   state_machine :initial => :unprocessed do
     event :enqueue do
       transition :unprocessed => :enqueued
@@ -28,10 +26,6 @@ class Video < ActiveRecord::Base
     before_transition :processing => :processed do |video|
       video.update_attribute :processing_finished_at, Time.now
     end
-  end
-
-  def set_original_filename
-    original_filename = original_video.file.original_filename
   end
 
   def process
