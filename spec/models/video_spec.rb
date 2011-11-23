@@ -84,7 +84,7 @@ describe Video do
       video = Fabricate(:video)
       video.original_video.stub(:cache_name).and_return('cache_name')
       video.original_video_cached_file_path.should ==
-        Rails.root.join(video.original_video.cache_dir, video.original_video.cache_name)
+        Rails.root.join('public', video.original_video.cache_dir, video.original_video.cache_name)
     end
   end
 

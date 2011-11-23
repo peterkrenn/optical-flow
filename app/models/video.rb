@@ -43,7 +43,7 @@ class Video < ActiveRecord::Base
   end
 
   def original_video_cached_file_path
-    Rails.root.join(original_video.cache_dir, original_video.cache_name)
+    Rails.root.join('public', original_video.cache_dir, original_video.cache_name)
   end
 
   def temp_file_path
