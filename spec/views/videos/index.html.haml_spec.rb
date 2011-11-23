@@ -62,7 +62,7 @@ describe 'videos/index.html.haml' do
       render
       videos.each do |video|
         if video.processed?
-          rendered.should have_selector :p, :content => "processed in #{distance_of_time_in_words(video.processing_finished_at, video.processing_started_at, true)}"
+          rendered.should have_selector :p, :content => "processed in #{distance_of_time_in_words(video.processing_finished_at, video.processing_started_at)}"
         end
       end
     end
