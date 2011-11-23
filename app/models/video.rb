@@ -31,8 +31,7 @@ class Video < ActiveRecord::Base
   def process
     start_processing
     original_video.cache_stored_file!
-    system(Rails.root.join('vendor', 'lucas-kanade-opencv').to_s,
-      original_video_cached_file_path.to_s, temp_file_path.to_s)
+    system('lucas-kanade-opencv', original_video_cached_file_path.to_s, temp_file_path.to_s)
     update_attribute :processed_video, File.open(temp_file_path)
     FileUtils.rm(temp_file_path)
     finish_processing
