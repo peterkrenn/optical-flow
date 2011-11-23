@@ -35,7 +35,7 @@ describe 'videos/index.html.haml' do
       render
       videos.each do |video|
         rendered.should have_selector 'p' do |p|
-          p.should have_selector 'a', :href => video.original_video.url, :content => 'download original file'
+          p.should have_selector 'a', :href => video.original_video.url, :target => '_blank', :content => 'download original file'
         end
       end
     end
@@ -72,7 +72,7 @@ describe 'videos/index.html.haml' do
       videos.each do |video|
         if video.processed?
           rendered.should have_selector 'p' do |p|
-            p.should have_selector 'a', :href => video.processed_video.url, :content => 'download processed file'
+            p.should have_selector 'a', :href => video.processed_video.url, :target => '_blank', :content => 'download processed file'
           end
         end
       end

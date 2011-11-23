@@ -2,5 +2,5 @@
   %p
     = video.original_filename
   %p
-    = link_to 'download original file', video.original_video.url
+    = link_to 'download original file', video.original_video.url, :target => '_blank'
   = render :partial => "#{video.state}_video", :object => video
