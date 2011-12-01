@@ -14,7 +14,9 @@ test:
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
-  pool: 5
-  timeout: 5000
+  adapter: postgresql
+  database: optical-flow_production
+  host: ec2-46-137-33-191.eu-west-1.compute.amazonaws.com
+  port: 5432
+  username: optical-flow
+  password: optical-flow
