@@ -27,3 +27,6 @@ $ gem update --system
 $ gem update
 $ gem install bundler
 $ rbenv rehash
+
+Install a JavaScript runtime
+# aptitude install nodejs

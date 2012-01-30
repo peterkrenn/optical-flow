@@ -3,13 +3,46 @@ Update system
 # aptitude full-upgrade
 
 Install ruby related packages
-# aptitude install build-essential ruby1.9.1 ruby1.9.1-dev libopenssl-ruby libsqlite3-dev
+# aptitude install build-essential ruby1.9.1 ruby1.9.1-dev libopenssl-ruby libsqlite3-dev libxml2-dev libxslt1-dev
+# ln -sf /usr/bin/ruby1.9.1 /usr/bin/ruby
+# ln -sf /usr/bin/rake1.9.1 /usr/bin/rake
+$ wget http://production.cf.rubygems.org/rubygems/rubygems-1.8.15.tgz
+$ tar -xvzf rubygems-1.8.15.tgz
+$ cd rubygems-1.8.15
+$ sudo ruby setup.rb
+# ln -sf /usr/bin/gem1.9.1 /usr/bin/gem
+#
 
 Install git
 # aptitude install git
 
 Install redis
 # aptitude install redis-server
+Comment out bind 127.0.0.1 in /etc/redis/redis.conf
+
+Install PostgreSQL
+# aptitude install postgresql-9.1
+# aptitude install libpq-dev
+# gem install pg
+Update /etc/postgresql/9.1/main/postgresql.conf
+listen_addresses = '*'
+# /etc/init.d/postgresql restart
+# su postgres
+$ createuser -P optical-flow
+$ createdb optical-flow_production
+$ exit
+
+Install OpenCV
+# aptitude install libavformat-dev
+# aptitude install ffmpeg
+# aptitude install libcv2.1 libcvaux2.1 libhighgui2.1 python-opencv opencv-doc libcv-dev libcvaux-dev libhighgui-dev
+
+Build and install lucas-kanade-opencv
+$ git clone git@github.com:peterkrenn/lucas-kanade-opencv.git
+$ cd lucas-kanade-opencv
+$ rake
+$ mkdir ~/bin
+$ cp lucas-kanade-opencv ~/bin
 
 Clone the repository
 $ git clone git://github.com/peterkrenn/optical-flow.git
@@ -21,5 +54,12 @@ $ bundle install --without development test
 Create the database
 $ rake db:migrate RAILS_ENV=production
 
-Start the server
-# bundle exec rails server -e production -p 80
+Install unicorn
+# gem install unicorn
+
+Install Nginx
+# aptitude install nginx
+add config
+
+Start unicorn
+$ unicorn_rails -c config/unicorn.rb -D -E production

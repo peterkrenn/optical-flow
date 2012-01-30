@@ -19,9 +19,11 @@ $ ec2-run-instances ami-65b28011 -k key-pair -t t1.micro
 Verify status and check hostname
 $ ec2-describe-instances
 
-Authorize ssh and http for the default security group
+Authorize ssh, http, postgres and redis for the default security group
 $ ec2-authorize default -p 22
 $ ec2-authorize default -p 80
+$ ec2-authorize default -p 5432
+$ ec2-authorize default -p 6379
 
 Log into the instance
 $ ssh -i key-pair-file ubunu@instance-hostname
