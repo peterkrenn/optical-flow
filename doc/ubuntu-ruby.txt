@@ -1,12 +1,12 @@
 Update system
-# aptitude update
-# aptitude full-upgrade
+$ sudo aptitude update
+$ sudo aptitude full-upgrade
 
 Install git
-# aptitude install git
+$ sudo aptitude install git
 
 Install packages for compiling ruby
-# aptitude install build-essential zlib1g-dev
+$ sudo aptitude install build-essential zlib1g-dev
 
 Install rbenv
 $ git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
@@ -18,7 +18,7 @@ Add eval "$(rbenv init -)" to your .bashrc
 Install ruby-build
 $ git clone https://github.com/sstephenson/ruby-build.git
 $ cd ruby-build
-# ./install.sh
+$ sudo ./install.sh
 
 Install ruby
 $ rbenv install 1.9.2-p290
@@ -29,4 +29,4 @@ $ gem install bundler
 $ rbenv rehash
 
 Install a JavaScript runtime
-# aptitude install nodejs
+$ sudo aptitude install nodejs

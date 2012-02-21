@@ -1,0 +1,12 @@
+$ sudo aptitude install build-essential
+$ sudo aptitude install cmake
+$ sudo aptitude install libpng-12-0-dev zlib1g-dev libjpeg-dev libtiff-dev libjasper-dev libavcodec-dev libavformat-dev ffmpeg
+
+Download OpenCV 2.3.1a and decompress it
+
+Create a build directory for OpenCV
+$ mkdir opencv-release
+$ cd opencv-release
+$ cmake ../OpenCV-2.3.1
+$ make
+$ sudo make install

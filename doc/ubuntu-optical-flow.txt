@@ -1,41 +1,37 @@
 Update system
-# aptitude update
-# aptitude full-upgrade
+$ sudo aptitude update
+$ sudo aptitude full-upgrade
 
 Install ruby related packages
-# aptitude install build-essential ruby1.9.1 ruby1.9.1-dev libopenssl-ruby libsqlite3-dev libxml2-dev libxslt1-dev
-# ln -sf /usr/bin/ruby1.9.1 /usr/bin/ruby
-# ln -sf /usr/bin/rake1.9.1 /usr/bin/rake
+$ sudo aptitude install build-essential ruby1.9.1 ruby1.9.1-dev libopenssl-ruby libsqlite3-dev libxml2-dev libxslt1-dev
+$ sudo ln -sf /usr/bin/ruby1.9.1 /usr/bin/ruby
+$ sudo ln -sf /usr/bin/rake1.9.1 /usr/bin/rake
 $ wget http://production.cf.rubygems.org/rubygems/rubygems-1.8.15.tgz
 $ tar -xvzf rubygems-1.8.15.tgz
 $ cd rubygems-1.8.15
 $ sudo ruby setup.rb
-# ln -sf /usr/bin/gem1.9.1 /usr/bin/gem
-#
+$ sudo ln -sf /usr/bin/gem1.9.1 /usr/bin/gem
 
 Install git
-# aptitude install git
+$ sudo aptitude install git
 
 Install redis
-# aptitude install redis-server
+$ sudo aptitude install redis-server
 Comment out bind 127.0.0.1 in /etc/redis/redis.conf
 
 Install PostgreSQL
-# aptitude install postgresql-9.1
-# aptitude install libpq-dev
-# gem install pg
+$ sudo aptitude install postgresql-9.1
+$ sudo aptitude install libpq-dev
+$ sudo gem install pg
 Update /etc/postgresql/9.1/main/postgresql.conf
 listen_addresses = '*'
-# /etc/init.d/postgresql restart
-# su postgres
+$ sudo /etc/init.d/postgresql restart
+$ sudo su postgres
 $ createuser -P optical-flow
 $ createdb optical-flow_production
 $ exit
 
 Install OpenCV
-# aptitude install libavformat-dev
-# aptitude install ffmpeg
-# aptitude install libcv2.1 libcvaux2.1 libhighgui2.1 python-opencv opencv-doc libcv-dev libcvaux-dev libhighgui-dev
 
 Build and install lucas-kanade-opencv
 $ git clone git@github.com:peterkrenn/lucas-kanade-opencv.git
@@ -55,10 +51,10 @@ Create the database
 $ rake db:migrate RAILS_ENV=production
 
 Install unicorn
-# gem install unicorn
+$ sudo gem install unicorn
 
 Install Nginx
-# aptitude install nginx
+$ sudo aptitude install nginx
 add config
 
 Start unicorn
