@@ -21,8 +21,8 @@ $ cd ruby-build
 $ sudo ./install.sh
 
 Install ruby
-$ rbenv install 1.9.2-p290
-$ rbenv global 1.9.2-p290
+$ rbenv install 1.9.3-p125
+$ rbenv global 1.9.3-p125
 $ gem update --system
 $ gem update
 $ gem install bundler

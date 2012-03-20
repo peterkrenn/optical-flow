@@ -1,4 +1,4 @@
 Update system
 
 Install JRE
-$ sudo aptitude install openjdk-6-jre
+$ sudo aptitude install openjdk-6-jdk

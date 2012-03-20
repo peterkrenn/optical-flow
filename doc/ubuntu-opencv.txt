@@ -1,6 +1,6 @@
 $ sudo aptitude install build-essential
 $ sudo aptitude install cmake
-$ sudo aptitude install libpng-12-0-dev zlib1g-dev libjpeg-dev libtiff-dev libjasper-dev libavcodec-dev libavformat-dev ffmpeg
+$ sudo aptitude install libpng-12-0-dev zlib1g-dev libjpeg-dev libtiff-dev libjasper-dev libavcodec-dev libavformat-dev libavfilter-dev libswscale-dev ffmpeg
 
 Download OpenCV 2.3.1a and decompress it
 
