@@ -41,10 +41,11 @@ $ cd xvidcore/build/generic
 $ ./configure
 $ sudo checkinstall --pkgname=libxvid --pkgversion="1.3.2" --backup=no --default --deldoc=yes
 
-Install FFmpeg:
-$ git clone --depth 1 git://source.ffmpeg.org/ffmpeg
-$ cd ffmpeg
+Install FFmpeg (0.7 is needed for JavaCV):
+$ wget http://ffmpeg.org/releases/ffmpeg-0.7.11.tar.bz2
+$ tar -xvjf ffmpeg-0.7.11.tar.bz2
+$ cd ffmpeg-0.7.11
 $ ./configure --enable-gpl --enable-libfaac --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libtheora --enable-libvorbis --enable-libvpx --enable-libx264 --enable-nonfree --enable-version3 --enable-x11grab --enable-libxvid --enable-swscale --enable-shared
 $ make
-$ sudo checkinstall --pkgname=ffmpeg --pkgversion="5:$(./version.sh)" --backup=no --deldoc=yes --default
+$ sudo checkinstall --pkgname=ffmpeg --pkgversion="0.7.11" --backup=no --deldoc=yes --default
 $ hash x264 ffmpeg ffplay ffprobe

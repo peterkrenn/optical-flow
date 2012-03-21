@@ -7,8 +7,10 @@ Install FFmpeg
 Download OpenCV 2.3.1a and decompress it
 
 Create a build directory for OpenCV
-$ mkdir opencv-release
-$ cd opencv-release
-$ cmake ../OpenCV-2.3.1
+$ tar -xvjf OpenCV-2.3.1a.tar.bz2
+$ cd OpenCV-2.3.1
+$ mkdir release
+$ cd release
+$ cmake ..
 $ make
-$ sudo make install
+$ sudo checkinstall --pkgname=opencv --pkgversion="2.3.1a" --backup=no --default --deldoc=yes
